@@ -15,11 +15,11 @@ var gProjects = [
         id: "pacman",
         name: "Pacman",
         title: "Dodge that ghosts",
-        desc: "eat your food and don't get eaten",
+        desc: 'eat your food and dont get eaten',
         url: "https://gilro79.github.io/pacman/",
         publishedAt: 1634574558000,
         labels: ["Vintage gamse", "keyboard events"],
-        img: 'img/portfolio/pacman-thumbnail.jpg',
+        img: 'img/portfolio/pacman-thumbnail.jpg'
     },
     {
         id: "bookshop",
@@ -35,4 +35,17 @@ var gProjects = [
 
 function getProjects() {
     return gProjects;
+}
+
+function getProjByName(projName){
+    const project = gProjects.find(proj => proj.name === projName);
+    return project;
+}
+
+function getDateFromTimestamp(timestamp){
+    var date = new Date(timestamp);
+    const releaseDate = ("Release date: "+date.getDate()+
+    "/"+(date.getMonth()+1)+
+    "/"+date.getFullYear());
+    return releaseDate;
 }
